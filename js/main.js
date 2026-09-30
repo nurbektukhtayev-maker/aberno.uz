@@ -3,6 +3,32 @@
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Tema (yorug' / qorong'u) ---
+  // Boshlang'ich tema <head> ichidagi skriptda o'rnatiladi (sahifa yuklanganda miltillamasligi uchun)
+  const root = document.documentElement;
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const currentTheme = () => root.dataset.theme || (darkQuery.matches ? "dark" : "light");
+
+  const syncToggles = () => {
+    const isDark = currentTheme() === "dark";
+    document.querySelectorAll(".theme-toggle").forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(isDark));
+      btn.setAttribute("aria-label", isDark ? "Yorug‘ rejimga o‘tish" : "Qorong‘u rejimga o‘tish");
+      btn.title = btn.getAttribute("aria-label");
+    });
+  };
+
+  document.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) { /* saqlab bo'lmasa ham tema almashadi */ }
+      syncToggles();
+    });
+  });
+  darkQuery.addEventListener("change", syncToggles);
+  syncToggles();
+
   // --- Mobil menyu ---
   const burger = document.querySelector(".burger");
   const nav = document.getElementById("nav");
