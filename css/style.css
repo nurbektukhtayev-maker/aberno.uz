@@ -12,12 +12,12 @@
   --accent: #f2b705;
 
   /* Rejimga qarab o'zgaradigan ranglar */
-  --bg: #f6f8fb;
+  --bg: #e8f3fc;
   --surface: #ffffff;
   --text: #1b2733;
   --heading: #0f2a44;
-  --muted: #5b6b7a;
-  --border: #e3e8ee;
+  --muted: #55687a;
+  --border: #d3e3f0;
   --link: #0e7c86;
   --teal-soft: #e3f3f4;
   --accent-soft: #fff6d6;
@@ -29,13 +29,13 @@
   --grad-navy: linear-gradient(135deg, #e6ecf3, #cdd9e7);
   --header-bg: rgba(255, 255, 255, .92);
   --menu-bg: #ffffff;
-  --input-bg: #f6f8fb;
+  --input-bg: #f1f8fe;
   --input-focus-bg: #ffffff;
   --hero-from: #0f2a44;
   --hero-to: #163a5c;
   --footer-bg: #0f2a44;
-  --map-a: #eef2f6;
-  --map-b: #e6ecf1;
+  --map-a: #e3f0fa;
+  --map-b: #d8e9f6;
   --danger: #d64545;
   --check-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e7c86' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
   --shadow: 0 10px 30px rgba(15, 42, 68, 0.08);
