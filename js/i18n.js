@@ -30,7 +30,7 @@
     "O'zbekiston": ["Узбекистан", "Uzbekistan"],
     "Aberno. Barcha huquqlar himoyalangan.": ["Aberno. Все права защищены.", "Aberno. All rights reserved."],
     "BULUT — quruq salfetka": ["BULUT — сухие салфетки", "BULUT — dry wipes"],
-    "ENM infin — salfetka xomashyosi": ["ENM infin — сырьё для салфеток", "ENM infin — wipe raw material"],
+    "ENM INFIN — salfetka xomashyosi": ["ENM INFIN — сырьё для салфеток", "ENM INFIN — wipe raw material"],
     "Margaritto — margarin": ["Margaritto — маргарин", "Margaritto — margarine"],
     "Batafsil →": ["Подробнее →", "Learn more →"],
     "Ariza qoldirish": ["Оставить заявку", "Send a request"],
@@ -73,9 +73,9 @@
       "Мягкие, прочные и хорошо впитывающие сухие салфетки для бытовых, гигиенических и промышленных целей.",
       "Soft, strong and highly absorbent dry wipes for household, hygiene and industrial use.",
     ],
-    "Quruq salfetka ishlab chiqaruvchilar uchun rulonli material. Import qilingan xomashyo korxonamizda qayta ishlanadi.": [
-      "Рулонный материал для производителей сухих салфеток. Импортное сырьё перерабатывается на нашем предприятии.",
-      "Roll material for dry wipe manufacturers. Imported raw material is processed at our plant.",
+    "Sof sellyulozadan tayyorlangan sanitariya-gigiyena qog'ozi: salfetka, sochiq va hojatxona qog'ozi ishlab chiqaruvchilar uchun.": [
+      "Санитарно-гигиеническая бумага из чистой целлюлозы: для производителей салфеток, полотенец и туалетной бумаги.",
+      "Sanitary and hygiene paper made from pure cellulose, for manufacturers of napkins, towels and toilet paper.",
     ],
     "Margarin": ["Маргарин", "Margarine"],
     "Qandolatchilik, non mahsulotlari va HoReCa sohasi uchun sifatli margarin mahsulotlari.": [
@@ -158,9 +158,9 @@
       "Часть переработанной продукции идёт на экспорт. Из другой части мы сами выпускаем готовую продукцию, а остальное продаём на внутреннем рынке. У компании есть собственная дистрибьюторская сеть, поэтому продукция доходит до покупателя без посредников.",
       "Part of the processed output is exported. From another part we make our own finished products, and the rest is sold on the domestic market. The company has its own distribution network, so products reach the buyer without intermediaries.",
     ],
-    "Mahsulotlarimiz uchta brend ostida chiqadi: BULUT — quruq salfetkalar, ENM infin — salfetka xomashyosi, Margaritto — margarin.": [
-      "Наша продукция выпускается под тремя брендами: BULUT — сухие салфетки, ENM infin — сырьё для салфеток, Margaritto — маргарин.",
-      "Our products are sold under three brands: BULUT for dry wipes, ENM infin for wipe raw material, and Margaritto for margarine.",
+    "Mahsulotlarimiz uchta brend ostida chiqadi: BULUT — quruq salfetkalar, ENM INFIN — salfetka xomashyosi, Margaritto — margarin.": [
+      "Наша продукция выпускается под тремя брендами: BULUT — сухие салфетки, ENM INFIN — сырьё для салфеток, Margaritto — маргарин.",
+      "Our products are sold under three brands: BULUT for dry wipes, ENM INFIN for wipe raw material, and Margaritto for margarine.",
     ],
     "Korxonada 150 dan ortiq hodim ishlaydi": ["На предприятии работает более 150 сотрудников", "More than 150 people work at the plant"],
     "Import va eksport faoliyati yo'lga qo'yilgan": ["Налажены импорт и экспорт", "Import and export operations are established"],
@@ -210,9 +210,9 @@
 
     // --- Mahsulotlar ---
     "Mahsulotlar — Aberno": ["Продукция — Aberno", "Products — Aberno"],
-    "Aberno mahsulotlari: BULUT quruq salfetkalari, ENM infin salfetka xomashyosi va Margaritto margarin.": [
-      "Продукция Aberno: сухие салфетки BULUT, сырьё для салфеток ENM infin и маргарин Margaritto.",
-      "Aberno products: BULUT dry wipes, ENM infin wipe raw material and Margaritto margarine.",
+    "Aberno mahsulotlari: BULUT quruq salfetkalari, ENM INFIN salfetka xomashyosi va Margaritto margarin.": [
+      "Продукция Aberno: сухие салфетки BULUT, сырьё для салфеток ENM INFIN и маргарин Margaritto.",
+      "Aberno products: BULUT dry wipes, ENM INFIN wipe raw material and Margaritto margarine.",
     ],
     "Mahsulotlarimiz": ["Наша продукция", "Our products"],
     "Quruq salfetka, uning xomashyosi va margarin. Ulgurji xaridorlar, ishlab chiqaruvchilar va eksport hamkorlari uchun.": [
@@ -233,17 +233,24 @@
     "Gigiyenik": ["Гигиенические", "Hygiene"],
     "Salonlar": ["Салоны", "Salons"],
     "02 · Xomashyo": ["02 · Сырьё", "02 · Raw material"],
-    "ENM infin — quruq salfetka uchun xomashyo": ["ENM infin — сырьё для сухих салфеток", "ENM infin — raw material for dry wipes"],
-    "ENM infin — salfetka ishlab chiqaruvchi korxonalar uchun rulonli material brendi. Xomashyo xorijdan import qilinadi, korxonamizda qayta ishlanadi va mijoz talabiga ko'ra tayyorlanadi.": [
-      "ENM infin — бренд рулонного материала для предприятий, производящих салфетки. Сырьё импортируется из-за рубежа, перерабатывается на нашем предприятии и готовится по требованиям заказчика.",
-      "ENM infin is our brand of roll material for wipe manufacturers. The raw material is imported, processed at our plant and prepared to the customer's requirements.",
+    "ENM INFIN — sanitariya-gigiyena qog'ozi": ["ENM INFIN — санитарно-гигиеническая бумага", "ENM INFIN — sanitary and hygiene paper"],
+    "ENM INFIN sof sellyuloza xomashyosidan tayyorlangan, turli xildagi yuqori sifatli sanitariya-gigiyena qog'ozini taklif etadi. Bu qog'ozdan hojatxona qog'ozi, sochiq va salfetkalar ishlab chiqariladi.": [
+      "ENM INFIN предлагает высококачественную санитарно-гигиеническую бумагу различных видов из чистого целлюлозного сырья. Из неё производят туалетную бумагу, полотенца и салфетки.",
+      "ENM INFIN offers high-quality sanitary and hygiene paper of various types, made from pure cellulose. It is used to produce toilet paper, towels and napkins.",
     ],
-    "Mijoz talabiga ko'ra kenglik va o'ram hajmi": ["Ширина и размер рулона по требованию заказчика", "Width and roll size to the customer's requirements"],
-    "Sifat nazoratidan o'tgan barqaror material": ["Стабильный материал, прошедший контроль качества", "Consistent, quality-controlled material"],
-    "Ichki bozor va eksport uchun yetkazib berish": ["Поставки на внутренний рынок и на экспорт", "Supply for the domestic market and export"],
-    "Doimiy hamkorlar uchun muntazam ta'minot": ["Регулярные поставки для постоянных партнёров", "Regular supply for long-term partners"],
-    "Ishlab chiqaruvchilar uchun": ["Для производителей", "For manufacturers"],
-    "Rulonlarda": ["В рулонах", "In rolls"],
+    "Sof sellyuloza xomashyosidan tayyorlanadi": ["Изготавливается из чистого целлюлозного сырья", "Made from pure cellulose"],
+    "Hojatxona qog'ozi, sochiq va salfetka ishlab chiqarish uchun": ["Для производства туалетной бумаги, полотенец и салфеток", "For producing toilet paper, towels and napkins"],
+    "Namga chidamli qog'oz turi ham mavjud": ["Есть и влагопрочная бумага", "Wet-strength paper is also available"],
+    "Katta rulonlarda yetkazib beriladi": ["Поставляется в больших рулонах", "Supplied in large rolls"],
+    "Salfetka uchun qog'oz": ["Бумага для салфеток", "Paper for napkins"],
+    "Sochiq uchun qog'oz": ["Бумага для полотенец", "Paper for towels"],
+    "Hojatxona qog'ozi uchun": ["Для туалетной бумаги", "For toilet paper"],
+    "Namga chidamli qog'oz": ["Влагопрочная бумага", "Wet-strength paper"],
+    "Narx so'rash →": ["Запросить цену →", "Request a quote →"],
+    "ENM INFIN qog'oz rulonlari": ["Рулоны бумаги ENM INFIN", "ENM INFIN paper rolls"],
+    "Qog'oz rulonlari ombori": ["Склад бумажных рулонов", "Paper roll warehouse"],
+    "Katta qog'oz rulonlari": ["Большие рулоны бумаги", "Large paper rolls"],
+    "Qog'oz rulonini o'rash jarayoni": ["Процесс намотки бумажного рулона", "Paper roll winding"],
     "03 · Margarin": ["03 · Маргарин", "03 · Margarine"],
     "Margaritto margarin mahsulotlari": ["Маргариновая продукция Margaritto", "Margaritto margarine products"],
     "Margaritto — qandolatchilik, non va un mahsulotlari ishlab chiqaruvchilari hamda umumiy ovqatlanish korxonalari uchun margarin brendi. Barqaror ta'm va tuzilish xamir mahsulotlarining sifatini oshiradi.": [
