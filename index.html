@@ -10,7 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script>try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      var l = localStorage.getItem("lang");
+      if (l === "ru" || l === "en") {
+        document.documentElement.lang = l;
+        document.documentElement.classList.add("i18n-loading");
+        setTimeout(function () { document.documentElement.classList.remove("i18n-loading"); }, 2000);
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -23,10 +34,22 @@
         <a href="products.html" class="nav__link">Mahsulotlar</a>
         <a href="production.html" class="nav__link">Ishlab chiqarish</a>
         <a href="distribution.html" class="nav__link">Distribyutsiya</a>
+        <a href="catalogs.html" class="nav__link">Kataloglar</a>
         <a href="contact.html" class="btn btn--primary nav__cta">Bog‘lanish</a>
       </nav>
       <div class="header__actions">
-        <button type="button" class="theme-toggle" aria-label="Qorong‘u rejimga o‘tish" aria-pressed="false">
+        <div class="lang" data-i18n-skip>
+          <button type="button" class="lang__btn" aria-haspopup="true" aria-expanded="false" aria-label="Tilni tanlash">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg>
+            <span class="lang__current">UZ</span>
+          </button>
+          <ul class="lang__menu">
+            <li><button type="button" data-lang="uz" lang="uz">O‘zbekcha</button></li>
+            <li><button type="button" data-lang="ru" lang="ru">Русский</button></li>
+            <li><button type="button" data-lang="en" lang="en">English</button></li>
+          </ul>
+        </div>
+        <button type="button" class="theme-toggle" data-i18n-skip aria-label="Qorong‘u rejimga o‘tish" aria-pressed="false">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         </button>
@@ -40,28 +63,24 @@
     <section class="hero">
       <div class="container hero__grid">
         <div>
-          <span class="eyebrow">Ishlab chiqarish · Import · Eksport</span>
+          <span class="eyebrow">Aberno Group · Oilangiz uchun</span>
           <h1>Sifatli mahsulot — <span>ishonchli</span> hamkorlik</h1>
           <p class="hero__lead">Aberno quruq salfetka, quruq salfetka uchun xomashyo va margarin ishlab chiqaradi. Xomashyoni chet eldan import qilamiz, o‘z korxonamizda qayta ishlaymiz va mahsulotni ichki bozorga hamda eksportga yetkazamiz.</p>
           <div class="hero__actions">
             <a href="products.html" class="btn btn--primary">Mahsulotlarni ko‘rish</a>
-            <a href="contact.html" class="btn btn--ghost">Hamkor bo‘lish</a>
+            <a href="catalogs.html" class="btn btn--outline">Kataloglarni ochish</a>
           </div>
+          <ul class="hero__brands">
+            <li>Brendlarimiz:</li>
+            <li>BULUT</li>
+            <li>ENM infin</li>
+            <li>Margaritto</li>
+          </ul>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__circle"></div>
-          <div class="float-card">
-            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
-            <div><strong>Quruq salfetka</strong><small>Tayyor mahsulot</small></div>
-          </div>
-          <div class="float-card">
-            <div class="icon-box icon-box--navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="5"/><circle cx="8" cy="12" r="1.5"/><path d="M8 7h12v10H8"/></svg></div>
-            <div><strong>Salfetka xomashyosi</strong><small>Rulonli material</small></div>
-          </div>
-          <div class="float-card">
-            <div class="icon-box icon-box--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></div>
-            <div><strong>Margarin</strong><small>Oziq-ovqat sanoati uchun</small></div>
-          </div>
+        <div class="hero__visual">
+          <img class="hero__img hero__img--main" src="assets/img/margaritto.jpg" alt="Margaritto margarini va undan tayyorlangan pishiriqlar" width="1200" height="1791">
+          <img class="hero__img hero__img--side" src="assets/img/bulut.jpg" alt="BULUT qog‘oz salfetkalari" width="900" height="1094">
+          <div class="hero__badge"><strong>150+</strong><span>malakali hodim</span></div>
         </div>
       </div>
     </section>
@@ -70,8 +89,8 @@
     <div class="container">
       <div class="stats reveal">
         <div class="stat"><div class="stat__num" data-count="150" data-suffix="+">150+</div><div class="stat__label">malakali hodim</div></div>
+        <div class="stat"><div class="stat__num" data-count="1000" data-suffix=" t">1000 t</div><div class="stat__label">oyiga margarin ishlab chiqarish quvvati</div></div>
         <div class="stat"><div class="stat__num" data-count="3">3</div><div class="stat__label">mahsulot yo‘nalishi</div></div>
-        <div class="stat"><div class="stat__num">Import</div><div class="stat__label">va eksport faoliyati</div></div>
         <div class="stat"><div class="stat__num">O‘z</div><div class="stat__label">distribyutsiya tarmog‘i</div></div>
       </div>
     </div>
@@ -86,8 +105,9 @@
         </div>
         <div class="grid grid--3">
           <article class="card product-card reveal">
-            <div class="product-card__top bg-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+            <div class="product-card__top bg-teal"><img src="assets/img/bulut.jpg" alt="BULUT qog‘oz salfetkalari" loading="lazy" width="900" height="1094"></div>
             <div class="product-card__body">
+              <span class="brand-badge">BULUT</span>
               <h3>Quruq salfetka</h3>
               <p>Maishiy, gigiyenik va sanoat maqsadlari uchun yumshoq, pishiq va suvni yaxshi shimadigan quruq salfetkalar.</p>
               <a href="products.html#salfetka" class="card__link">Batafsil →</a>
@@ -96,14 +116,16 @@
           <article class="card product-card reveal">
             <div class="product-card__top bg-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="5"/><circle cx="8" cy="12" r="1.5"/><path d="M8 7h12v10H8"/></svg></div>
             <div class="product-card__body">
+              <span class="brand-badge">ENM infin</span>
               <h3>Salfetka xomashyosi</h3>
               <p>Quruq salfetka ishlab chiqaruvchilar uchun rulonli material. Import qilingan xomashyo korxonamizda qayta ishlanadi.</p>
               <a href="products.html#xomashyo" class="card__link">Batafsil →</a>
             </div>
           </article>
           <article class="card product-card reveal">
-            <div class="product-card__top bg-accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></div>
+            <div class="product-card__top bg-accent"><img src="assets/img/margaritto-wide.jpg" alt="Margaritto margarin qadoqlari" loading="lazy" width="1400" height="588"></div>
             <div class="product-card__body">
+              <span class="brand-badge">Margaritto</span>
               <h3>Margarin</h3>
               <p>Qandolatchilik, non mahsulotlari va HoReCa sohasi uchun sifatli margarin mahsulotlari.</p>
               <a href="products.html#margarin" class="card__link">Batafsil →</a>
@@ -141,7 +163,7 @@
             </div>
             <div class="flow__out">
               <div class="icon-box icon-box--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
-              <div><strong>Tayyor mahsulot</strong><small>O‘z brendimiz ostida</small></div>
+              <div><strong>Tayyor mahsulot</strong><small>O‘z brendlarimiz ostida</small></div>
             </div>
             <div class="flow__out">
               <div class="icon-box icon-box--navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h14v12H1z"/><path d="M15 9h4l4 4v3h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
@@ -149,7 +171,7 @@
             </div>
           </div>
         </div>
-        <div style="text-align:center;margin-top:40px">
+        <div style="text-align:center;margin-top:44px">
           <a href="production.html" class="btn btn--outline">Ishlab chiqarish haqida batafsil</a>
         </div>
       </div>
@@ -187,16 +209,55 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="container">
-      <div class="cta reveal">
-        <div>
-          <h2>Ulgurji xarid yoki hamkorlik bo‘yicha savolingiz bormi?</h2>
-          <p>Distribyutor, ulgurji xaridor yoki eksport hamkori bo‘lish uchun biz bilan bog‘laning. Mutaxassisimiz sizga qo‘ng‘iroq qiladi.</p>
+    <!-- Kataloglar -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--dark">Kataloglar</span>
+          <h2>Mahsulot kataloglari</h2>
+          <p>Barcha mahsulotlar, qadoqlash o‘lchamlari va tavsiflari bilan tanishish uchun kataloglarni oching yoki yuklab oling.</p>
         </div>
-        <div class="cta__actions">
-          <a href="contact.html" class="btn btn--primary">Ariza qoldirish</a>
-          <a href="distribution.html" class="btn btn--ghost">Hamkorlik shartlari</a>
+        <div class="grid grid--2">
+          <article class="card catalog catalog--stack reveal">
+            <a class="catalog__cover" href="assets/catalogs/aberno-katalog.pdf" target="_blank" rel="noopener"><img src="assets/img/cat-aberno-1.jpg" alt="Yog‘-moy mahsulotlari katalogi muqovasi" loading="lazy" width="900" height="900"></a>
+            <div class="catalog__body">
+              <span class="brand-badge">Margaritto · Smaylo</span>
+              <h3>Yog‘-moy mahsulotlari katalogi</h3>
+              <div class="catalog__meta"><span class="chip">PDF</span><span class="chip">30 sahifa</span><span class="chip">41 MB</span></div>
+              <div class="catalog__actions">
+                <a class="btn btn--teal" href="assets/catalogs/aberno-katalog.pdf" target="_blank" rel="noopener">Katalogni ochish</a>
+                <a class="btn btn--outline" href="assets/catalogs/aberno-katalog.pdf" download>Yuklab olish</a>
+              </div>
+            </div>
+          </article>
+          <article class="card catalog catalog--stack reveal">
+            <a class="catalog__cover" href="assets/catalogs/bulut-katalog.pdf" target="_blank" rel="noopener"><img src="assets/img/cat-bulut-1.jpg" alt="BULUT qog‘oz mahsulotlari katalogi muqovasi" loading="lazy" width="900" height="1273"></a>
+            <div class="catalog__body">
+              <span class="brand-badge">BULUT · PanDoozy</span>
+              <h3>Qog‘oz mahsulotlari katalogi</h3>
+              <div class="catalog__meta"><span class="chip">PDF</span><span class="chip">13 sahifa</span><span class="chip">62 MB</span></div>
+              <div class="catalog__actions">
+                <a class="btn btn--teal" href="assets/catalogs/bulut-katalog.pdf" target="_blank" rel="noopener">Katalogni ochish</a>
+                <a class="btn btn--outline" href="assets/catalogs/bulut-katalog.pdf" download>Yuklab olish</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>Ulgurji xarid yoki hamkorlik bo‘yicha savolingiz bormi?</h2>
+            <p>Distribyutor, ulgurji xaridor yoki eksport hamkori bo‘lish uchun biz bilan bog‘laning. Mutaxassisimiz sizga qo‘ng‘iroq qiladi.</p>
+          </div>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--primary">Ariza qoldirish</a>
+            <a href="distribution.html" class="btn btn--ghost">Hamkorlik shartlari</a>
+          </div>
         </div>
       </div>
     </section>
@@ -216,22 +277,24 @@
             <li><a href="products.html">Mahsulotlar</a></li>
             <li><a href="production.html">Ishlab chiqarish</a></li>
             <li><a href="distribution.html">Distribyutsiya</a></li>
+            <li><a href="catalogs.html">Kataloglar</a></li>
           </ul>
         </div>
         <div>
           <h4>Mahsulotlar</h4>
           <ul>
-            <li><a href="products.html#salfetka">Quruq salfetka</a></li>
-            <li><a href="products.html#xomashyo">Salfetka xomashyosi</a></li>
-            <li><a href="products.html#margarin">Margarin</a></li>
+            <li><a href="products.html#salfetka">BULUT — quruq salfetka</a></li>
+            <li><a href="products.html#xomashyo">ENM infin — salfetka xomashyosi</a></li>
+            <li><a href="products.html#margarin">Margaritto — margarin</a></li>
           </ul>
         </div>
         <div>
           <h4>Aloqa</h4>
           <ul>
-            <li><a href="tel:+998000000000">+998 (00) 000-00-00</a></li>
-            <li><a href="mailto:info@aberno.uz">info@aberno.uz</a></li>
-            <li>O‘zbekiston</li>
+            <li><a href="tel:+998953427070">+998 95 342 70 70</a></li>
+            <li><a href="tel:+998712300900">+998 71 230 09 00</a></li>
+            <li><a href="https://t.me/aberno_uz" target="_blank" rel="noopener">Telegram: @aberno_uz</a></li>
+            <li><a href="https://www.instagram.com/aberno.uz" target="_blank" rel="noopener">Instagram: @aberno.uz</a></li>
           </ul>
         </div>
       </div>
@@ -242,6 +305,7 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

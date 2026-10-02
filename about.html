@@ -10,7 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script>try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      var l = localStorage.getItem("lang");
+      if (l === "ru" || l === "en") {
+        document.documentElement.lang = l;
+        document.documentElement.classList.add("i18n-loading");
+        setTimeout(function () { document.documentElement.classList.remove("i18n-loading"); }, 2000);
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -23,10 +34,22 @@
         <a href="products.html" class="nav__link">Mahsulotlar</a>
         <a href="production.html" class="nav__link">Ishlab chiqarish</a>
         <a href="distribution.html" class="nav__link">Distribyutsiya</a>
+        <a href="catalogs.html" class="nav__link">Kataloglar</a>
         <a href="contact.html" class="btn btn--primary nav__cta">Bog‘lanish</a>
       </nav>
       <div class="header__actions">
-        <button type="button" class="theme-toggle" aria-label="Qorong‘u rejimga o‘tish" aria-pressed="false">
+        <div class="lang" data-i18n-skip>
+          <button type="button" class="lang__btn" aria-haspopup="true" aria-expanded="false" aria-label="Tilni tanlash">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg>
+            <span class="lang__current">UZ</span>
+          </button>
+          <ul class="lang__menu">
+            <li><button type="button" data-lang="uz" lang="uz">O‘zbekcha</button></li>
+            <li><button type="button" data-lang="ru" lang="ru">Русский</button></li>
+            <li><button type="button" data-lang="en" lang="en">English</button></li>
+          </ul>
+        </div>
+        <button type="button" class="theme-toggle" data-i18n-skip aria-label="Qorong‘u rejimga o‘tish" aria-pressed="false">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         </button>
@@ -48,6 +71,7 @@
     <section class="section">
       <div class="container split">
         <div class="split__media bg-teal reveal">
+          <img src="assets/img/factory.jpg" alt="" loading="lazy" width="1400" height="1334">
           <svg class="big-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20V9l6 4V9l6 4V4h8v16Z"/><path d="M6 16h2M12 16h2M17 16h2"/></svg>
           <span class="tag">150+ hodim</span>
         </div>
@@ -56,6 +80,7 @@
           <h2>Ishlab chiqarish, savdo va logistika — bir joyda</h2>
           <p>Aberno — quruq salfetka, quruq salfetka uchun xomashyo va margarin ishlab chiqaruvchi O‘zbekiston kompaniyasi. Xomashyoni xorijiy hamkorlardan import qilamiz va o‘z korxonamizda qayta ishlaymiz.</p>
           <p>Qayta ishlangan mahsulotning bir qismi eksport qilinadi. Yana bir qismidan o‘zimiz tayyor mahsulot ishlab chiqaramiz, qolgani esa ichki bozorga sotiladi. Kompaniyaning o‘z distribyutsiya tarmog‘i bor, shuning uchun mahsulot xaridorga vositachilarsiz yetib boradi.</p>
+          <p>Mahsulotlarimiz uchta brend ostida chiqadi: BULUT — quruq salfetkalar, ENM infin — salfetka xomashyosi, Margaritto — margarin.</p>
           <ul class="check-list">
             <li>Korxonada 150 dan ortiq hodim ishlaydi</li>
             <li>Import va eksport faoliyati yo‘lga qo‘yilgan</li>
@@ -128,6 +153,7 @@
     <section class="section section--white">
       <div class="container split split--reverse">
         <div class="split__media bg-navy reveal">
+          <img src="assets/img/team.jpg" alt="" loading="lazy" width="1400" height="1081">
           <svg class="big-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           <span class="tag">Bizning jamoa</span>
         </div>
@@ -176,22 +202,24 @@
             <li><a href="products.html">Mahsulotlar</a></li>
             <li><a href="production.html">Ishlab chiqarish</a></li>
             <li><a href="distribution.html">Distribyutsiya</a></li>
+            <li><a href="catalogs.html">Kataloglar</a></li>
           </ul>
         </div>
         <div>
           <h4>Mahsulotlar</h4>
           <ul>
-            <li><a href="products.html#salfetka">Quruq salfetka</a></li>
-            <li><a href="products.html#xomashyo">Salfetka xomashyosi</a></li>
-            <li><a href="products.html#margarin">Margarin</a></li>
+            <li><a href="products.html#salfetka">BULUT — quruq salfetka</a></li>
+            <li><a href="products.html#xomashyo">ENM infin — salfetka xomashyosi</a></li>
+            <li><a href="products.html#margarin">Margaritto — margarin</a></li>
           </ul>
         </div>
         <div>
           <h4>Aloqa</h4>
           <ul>
-            <li><a href="tel:+998000000000">+998 (00) 000-00-00</a></li>
-            <li><a href="mailto:info@aberno.uz">info@aberno.uz</a></li>
-            <li>O‘zbekiston</li>
+            <li><a href="tel:+998953427070">+998 95 342 70 70</a></li>
+            <li><a href="tel:+998712300900">+998 71 230 09 00</a></li>
+            <li><a href="https://t.me/aberno_uz" target="_blank" rel="noopener">Telegram: @aberno_uz</a></li>
+            <li><a href="https://www.instagram.com/aberno.uz" target="_blank" rel="noopener">Instagram: @aberno.uz</a></li>
           </ul>
         </div>
       </div>
@@ -202,6 +230,7 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

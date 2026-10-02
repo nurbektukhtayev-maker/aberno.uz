@@ -3,6 +3,9 @@
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Matnni tanlangan tilga o'giradi (lug'at js/i18n.js da)
+  const t = (text) => (window.i18n ? window.i18n.t(text) : text);
+
   // --- Tema (yorug' / qorong'u) ---
   // Boshlang'ich tema <head> ichidagi skriptda o'rnatiladi (sahifa yuklanganda miltillamasligi uchun)
   const root = document.documentElement;
@@ -13,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isDark = currentTheme() === "dark";
     document.querySelectorAll(".theme-toggle").forEach((btn) => {
       btn.setAttribute("aria-pressed", String(isDark));
-      btn.setAttribute("aria-label", isDark ? "Yorug‘ rejimga o‘tish" : "Qorong‘u rejimga o‘tish");
+      btn.setAttribute("aria-label", t(isDark ? "Yorug‘ rejimga o‘tish" : "Qorong‘u rejimga o‘tish"));
       btn.title = btn.getAttribute("aria-label");
     });
   };
@@ -27,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   darkQuery.addEventListener("change", syncToggles);
+  document.addEventListener("langchange", syncToggles);
   syncToggles();
 
   // --- Mobil menyu ---
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
-    window.addEventListener("resize", () => { if (window.innerWidth > 900) setOpen(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1180) setOpen(false); });
   }
 
   // --- Header soyasi ---
@@ -117,9 +121,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const result = rules[name](input.value);
       const ok = result === true;
       field.classList.toggle("is-invalid", !ok);
-      field.querySelector(".field__error").textContent = ok ? "" : result;
+      field.querySelector(".field__error").textContent = ok ? "" : t(result);
       return ok;
     };
+
+    // Til almashganda ko'rinib turgan xato xabarlari ham yangi tilga o'tadi
+    document.addEventListener("langchange", () => {
+      Object.keys(rules).forEach((name) => {
+        if (form.elements[name].closest(".field").classList.contains("is-invalid")) validateField(name);
+      });
+    });
 
     Object.keys(rules).forEach((name) => {
       form.elements[name].addEventListener("blur", () => validateField(name));
